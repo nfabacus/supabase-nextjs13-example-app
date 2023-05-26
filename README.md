@@ -1,6 +1,16 @@
 # Supabase and Nextjs 13 Example App
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 1. Set up Supabase
+- First, need to sign up and set up a supabase project. Visit at [supabase.com](https://supabase.com/)
+- I added posts table for now.
+
+## 2. Scaffold the frontend app with nextjs 13 (App Router)
+- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+- You need to set up .env.local
+
+#### Attention!
+- If you created the app with src folder, middleware.ts must be under the src folder (not under the root folder).  Otherwise, the middleware does not trigger at all. If you created the app without src folder, then place middleware.ts in the root folder.  I spent too much time wondering why it was not working.
+- Protected routes can be implemented through the middleware.ts file which runs before the each page route is rendered on the server side.
 
 ## Getting Started
 
@@ -8,10 +18,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
